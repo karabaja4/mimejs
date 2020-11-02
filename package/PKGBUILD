@@ -21,10 +21,11 @@ pkgver() {
 build() {
   cd $_pkgname
   npm install
-  ./node_modules/pkg/lib-es5/bin.js --targets linux main.js
+  node_modules/pkg/lib-es5/bin.js --targets linux main.js
 }
 
 package() {
   cd $_pkgname
-  install -Dm644 "$srcdir/mime.json" "${pkgdir}/etc/mime.json"l
+  install -Dm755 "main" "${pkgdir}/usr/bin/xdg-open"
+  install -Dm644 "mime.json" "${pkgdir}/etc/mime.json"
 }
