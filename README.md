@@ -15,12 +15,12 @@ Configuration is done via JSON configuration file. It comes with my defaults in 
 
 ### System wide
 
-```
+```bash
 /etc/mime.json
 ```
 
 ### Per user
-```
+```bash
 $HOME/.mime.json
 ```
 ### Variables
@@ -74,3 +74,13 @@ Use this object to configure the command used when a URL is detected. You need t
   "file://*": "thunar $arg"
 }
 ```
+
+## Logging
+
+mimejs logs everything it does to:
+
+```bash
+$HOME/.local/share/mimejs/mimejs.log
+```
+
+It logs every application that it attempted to open, successful or otherwise. Useful when you need to debug which configuration entry you need to add.
