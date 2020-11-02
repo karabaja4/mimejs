@@ -1,2 +1,76 @@
 # mimejs
-A Node.js replacement for xdg-open
+A replacement for xdg-open written in Node.js.
+
+mimejs is a small Node.js application designed to replace xdg-open on a Linux system. It discards any use of *.desktop files and instead focuses on running commands to open files.
+
+It focuses on adding the support for:
+
+* Extensions
+* MIME Types
+* Protocols
+
+## Configuration
+
+Configuration is done via JSON configuration file. It comes with my defaults in the system configuration file, please edit to your liking.
+
+### System wide
+
+```
+/etc/mime.json
+```
+
+### Per user
+```
+$HOME/.mime.json
+```
+### Variables
+
+Use `$arg` to pass the xdg-open parameter.\
+Use `$pwd` to pass the current directory path (useful for file managers).
+
+### Extensions
+
+Use this object to configure the command used when a specific extension is detected in the file name. Separate the extension list by a comma `,`
+
+Example:
+```json
+"extensions": {
+  "txt,c,cpp": "leafpad $arg",
+  "avi,mkv,mp4": "vlc $arg",
+  "torrent": "qbittorrent $arg",
+  "pdf": "mupdf -r 96 $arg"
+}
+```
+
+### MIME types
+
+Use this object to configure the command used when a specific MIME type is detected.\
+Use a `file` command to read the MIME type of your file:
+```bash
+file -E --brief --mime-type file.txt
+```
+You can use a wildcard `*` to match multiple MIME types or subtypes for every command.
+
+Example:
+```json
+"mimetypes": {
+  "text/*": "leafpad $arg",
+  "video/*": "vlc $arg",
+  "media/video": "vlc $arg",
+  "document/pdf": "mupdf -r 96 $arg",
+  "inode/directory": "thunar $arg"
+}
+```
+
+### Protocols
+
+Use this object to configure the command used when a URL is detected. You need to use a wildcard `*` to successfully match URLs.
+
+```json
+"protocols": {
+  "http://*": "chromium $arg",
+  "https://*": "chromium $arg",
+  "slack://*": "slack $arg",
+  "file://*": "thunar $arg"
+}
+```
