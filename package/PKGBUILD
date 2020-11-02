@@ -1,3 +1,5 @@
+# Maintainer: Igor Saric <karabaja4 at gmail dot com>
+
 _pkgname=mimejs
 pkgname=$_pkgname-git
 pkgver=0.1.2a3d118
