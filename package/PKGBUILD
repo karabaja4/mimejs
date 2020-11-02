@@ -2,7 +2,7 @@ _pkgname=mimejs
 pkgname=$_pkgname-git
 pkgver=0.1.2a3d118
 pkgrel=1
-pkgdesc="A Node.js replacement for xdg-open"
+pkgdesc="A replacement for xdg-open written in Node.js"
 arch=('i686' 'x86_64')
 url="https://github.com/karabaja4/mimejs"
 license=('MIT')
@@ -14,18 +14,17 @@ source=('git+https://github.com/karabaja4/mimejs.git')
 md5sums=('SKIP')
 
 pkgver() {
-  cd "$_pkgname"
+  cd $_pkgname
   echo "0.1.$(git rev-parse --short HEAD)"
 }
 
 build() {
   cd $_pkgname
   npm install
-  pkg --targets linux main.js
+  ./node_modules/pkg/lib-es5/bin.js --targets linux main.js
 }
 
 package() {
   cd $_pkgname
-  install -Dm644 "$srcdir/mime.json" "${pkgdir}/etc/mime.json"
-  make INSTALL_ROOT="$pkgdir" install
+  install -Dm644 "$srcdir/mime.json" "${pkgdir}/etc/mime.json"l
 }
