@@ -66,6 +66,7 @@ Example:
 
 Use this object to configure the command used when a URL is detected. You need to use a wildcard `*` to successfully match URLs.
 
+Example:
 ```json
 "protocols": {
   "http://*": "chromium $arg",
