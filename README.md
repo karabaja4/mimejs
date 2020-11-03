@@ -45,10 +45,6 @@ Example:
 ### MIME types
 
 Use this object to configure the command used when a specific MIME type is detected.\
-Use a `file` command to read the MIME type of your file:
-```bash
-file -E --brief --mime-type file.txt
-```
 You can use a wildcard `*` to match multiple MIME types or subtypes for every command.
 
 Example:
@@ -60,6 +56,10 @@ Example:
   "document/pdf": "mupdf -r 96 $arg",
   "inode/directory": "thunar $arg"
 }
+```
+Use a `file` command to identify the MIME type of your file:
+```bash
+file -E --brief --mime-type file.txt
 ```
 
 ### Protocols
