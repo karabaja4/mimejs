@@ -7,7 +7,7 @@ It focuses on adding the support for:
 
 * Extensions
 * MIME Types
-* Protocols
+* Protocols (URLs)
 
 ## Configuration
 
