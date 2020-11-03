@@ -30,7 +30,7 @@ Use `$pwd` to pass the current directory path (useful for file managers).
 
 ### Extensions
 
-Use this object to configure the command used when a specific extension is detected in the file name. Separate the extension list by a comma `,`
+Use this object to configure the command used when a specific extension is detected in the file name. Separate the extension list by a comma. Extensions have a priority over MIME types.
 
 Example:
 ```json
