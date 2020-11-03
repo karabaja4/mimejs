@@ -1,5 +1,4 @@
 # mimejs
-A replacement for xdg-open written in Node.js.
 
 mimejs is a small Node.js application designed to replace xdg-open on a Linux system. It discards any use of *.desktop files and instead focuses on running commands to open files.
 
