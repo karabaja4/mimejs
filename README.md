@@ -90,6 +90,7 @@ It logs every application that it attempted to open, successful or otherwise. Us
 Package the Node.js app into a binary with `pkg` and symlink it as your xdg-open binary:
 
 ```bash
+sudo npm install -g pkg
 pkg --targets linux main.js
 sudo mv /usr/bin/xdg-open /usr/bin/xdg-open.bak
 sudo ln -s main /usr/bin/xdg-open
