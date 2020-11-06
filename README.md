@@ -84,3 +84,13 @@ $HOME/.local/share/mimejs/mimejs.log
 ```
 
 It logs every application that it attempted to open, successful or otherwise. Useful when you need to debug which configuration entry you need to add.
+
+## Installation
+
+Package the Node.js app into a binary with `pkg` and symlink it as your xdg-open binary:
+
+```bash
+pkg --targets linux main.js
+sudo mv /usr/bin/xdg-open /usr/bin/xdg-open.bak
+sudo ln -s main /usr/bin/xdg-open
+```
