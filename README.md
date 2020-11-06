@@ -95,3 +95,5 @@ pkg --targets linux main.js
 sudo mv /usr/bin/xdg-open /usr/bin/xdg-open.bak
 sudo ln -s main /usr/bin/xdg-open
 ```
+
+If you use Arch Linux, there is an AUR package: https://aur.archlinux.org/packages/mimejs-git
