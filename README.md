@@ -90,10 +90,10 @@ It logs every application that it attempted to open, successful or otherwise. Us
 Package the Node.js app into a binary with `pkg` and symlink it as your xdg-open binary:
 
 ```bash
-sudo npm install -g pkg
-pkg --targets linux main.js
-sudo mv /usr/bin/xdg-open /usr/bin/xdg-open.bak
-sudo ln -s main /usr/bin/xdg-open
+npm install
+sudo mv "/usr/bin/xdg-open" "/usr/bin/xdg-open.bak"
+sudo ln -s "${PWD}/main.js" "/usr/bin/xdg-open"
+sudo cp "${PWD}/mime.json" "/etc/mime.json"
 ```
 
 If you use Arch Linux, there is an AUR package: https://aur.archlinux.org/packages/mimejs-git
