@@ -87,7 +87,7 @@ It logs every application that it attempted to open, successful or otherwise. Us
 
 ## Installation
 
-Package the Node.js app into a binary with `pkg` and symlink it as your xdg-open binary:
+Symlink main.js as your xdg-open binary:
 
 ```bash
 npm install
