@@ -3,7 +3,7 @@
 const args = require('minimist')(process.argv.slice(2));
 const path = require('path');
 const util = require('util');
-const nm = require('nanomatch');
+const nanomatch = require('nanomatch');
 const exec = util.promisify(require('child_process').exec);
 const log = require('./lib/log');
 const cfg = require('./lib/config');
@@ -51,7 +51,7 @@ const main = async () => {
   };
   
   const match = (value, glob) => {
-    return nm.isMatch(value, glob.replace(/\*+/gi, '**'), { nonegate: true });
+    return nanomatch.isMatch(value, glob.replace(/\*+/gi, '**'), { nonegate: true, nocase: true });
   };
 
   const config = await cfg.read();
@@ -76,7 +76,7 @@ const main = async () => {
     for (const key in extensions) {
       const splits = key.split(',');
       for (let i = 0; i < splits.length; i++) {
-        if (match(ext, splits[i])) {
+        if (match(ext, splits[i].trim())) {
           return await execute(extensions[key]);
         }
       }

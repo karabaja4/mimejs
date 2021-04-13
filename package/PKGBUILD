@@ -1,4 +1,5 @@
 # Maintainer: Igor Saric <karabaja4 at gmail dot com>
+# shellcheck disable=SC2181,SC2148,SC2034,SC2164,SC2154
 
 _pkgname=mimejs
 pkgname=$_pkgname-git
