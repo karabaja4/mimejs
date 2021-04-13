@@ -20,7 +20,7 @@ Configuration is done via JSON configuration file. It comes with my defaults in 
 
 ### Per user
 ```bash
-$HOME/.mime.json
+$HOME/.config/mime.json
 ```
 ### Variables
 
