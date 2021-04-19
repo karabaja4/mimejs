@@ -5,7 +5,8 @@
     "jpg,jpeg,svg,png,bmp,gif,tga": "gpicview $arg",
     "gz,zip,rar,zst": "xarchiver $arg",
     "torrent": "qbittorrent $arg",
-    "pdf": "mupdf -r 96 $arg"
+    "pdf": "mupdf -r 96 $arg",
+    "html": "chromium $arg"
   },
   "mimetypes": {
     "text/*": "leafpad $arg",
@@ -18,6 +19,8 @@
     "http://*": "chromium $arg",
     "https://*": "chromium $arg",
     "slack://*": "slack $arg",
-    "file://*": "thunar $arg"
+    "file://*": "thunar $arg",
+    "zoommtg://*": "zoom $arg",
+    "msteams:/l/*": "teams $arg"
   }
 }
