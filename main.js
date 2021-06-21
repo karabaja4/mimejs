@@ -34,10 +34,6 @@ const main = async () => {
   };
   
   const sub = (cmd) => {
-    // stupid fix for qtfm not being able to open "."
-    if (cmd.startsWith('qtfm') && arg === '.') {
-      cmd = cmd.replace('$arg', '$pwd');
-    }
     for (const key in vars) {
       cmd = cmd.replace(key, () => vars[key]);
     }
