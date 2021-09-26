@@ -43,7 +43,7 @@ const main = async () => {
   const execute = async (cmd) => {
     const command = sub(cmd);
     await log.write('exec', command);
-    return await exec(`( ${command} & ) > /dev/null 2>&1 &`);
+    return await exec(`( ${command} & ) > /dev/null 2>&1`);
   };
   
   const match = (value, glob) => {
