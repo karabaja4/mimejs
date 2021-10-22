@@ -82,7 +82,7 @@ const main = async () => {
   // mimetypes
   try {
     const mimetypes = config['mimetypes'] || {};
-    const { stdout } = await exec(`file -E --brief --mime-type '${arg}'`);
+    const { stdout } = await exec(`file -L -E --brief --mime-type '${arg}'`);
     for (const key in mimetypes) {
       if (match(stdout.trim(), key)) {
         return await execute(mimetypes[key]);
