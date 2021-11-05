@@ -10,7 +10,7 @@ It focuses on adding the support for:
 
 ## Configuration
 
-Configuration is done via JSON configuration file. It comes with my defaults in the system configuration file, please edit to your liking.
+Configuration is done via JSON configuration file. It comes with the example defaults in the system configuration file, please edit to your liking.
 
 ### System wide
 
@@ -63,15 +63,15 @@ file -E --brief --mime-type file.txt
 
 ### Protocols
 
-Use this object to configure the command used when a URL is detected. You need to use a wildcard `*` to successfully match URLs.
+Use this object to configure the command used when a URL is detected.
 
 Example:
 ```json
 "protocols": {
-  "http://*": "chromium $arg",
-  "https://*": "chromium $arg",
-  "slack://*": "slack $arg",
-  "file://*": "thunar $arg"
+  "http://": "chromium $arg",
+  "https://": "chromium $arg",
+  "slack://": "slack $arg",
+  "file://": "thunar $arg"
 }
 ```
 

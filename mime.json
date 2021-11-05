@@ -16,11 +16,11 @@
     "inode/directory": "thunar $arg"
   },
   "protocols": {
-    "http://*": "chromium $arg",
-    "https://*": "chromium $arg",
-    "slack://*": "slack $arg",
-    "file://*": "thunar $arg",
-    "zoommtg://*": "zoom $arg",
-    "msteams:/l/*": "teams $arg"
+    "http://": "chromium $arg",
+    "https://": "chromium $arg",
+    "slack://": "slack $arg",
+    "file://": "thunar $arg",
+    "zoommtg://": "zoom $arg",
+    "msteams:/l/": "teams $arg"
   }
 }

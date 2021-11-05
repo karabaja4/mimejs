@@ -56,10 +56,10 @@ const main = async () => {
   }
 
   // protocols
-  if (arg.match(/^[a-z]+:\/l?\/.+$/gi)) { // l? is for msteams support
+  if (arg.match(/^[a-z]+:\/l?\/$/gi)) { // l? is for msteams support
     const protocols = config['protocols'] || {};
     for (const key in protocols) {
-      if (match(arg, key)) {
+      if (match(arg, `${key}*`)) {
         return await execute(protocols[key]);
       }
     }
