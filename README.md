@@ -56,9 +56,6 @@ Use `$pwd` to pass the current directory path (useful for file managers).
 
 ### Extensions
 
-Use this object to configure the command used when a specific extension is detected in the file name. Separate the extension list by a comma. Extensions have a priority over MIME types.
-
-Example:
 ```json
 "extensions": {
   "txt,c,cpp": "leafpad $arg",
@@ -68,12 +65,10 @@ Example:
 }
 ```
 
+Use this object to configure the command used when a specific extension is detected in the file name. Separate the extension list by a comma. Extensions have a priority over MIME types.
+
 ### MIME types
 
-Use this object to configure the command used when a specific MIME type is detected.\
-You can use a wildcard `*` to match multiple MIME types or subtypes for every command.
-
-Example:
 ```json
 "mimetypes": {
   "text/*": "leafpad $arg",
@@ -83,6 +78,10 @@ Example:
   "inode/directory": "thunar $arg"
 }
 ```
+
+Use this object to configure the command used when a specific MIME type is detected.\
+You can use a wildcard `*` to match multiple MIME types or subtypes for every command.
+
 Use a `file` command to identify the MIME type of your file:
 ```bash
 file -E --brief --mime-type file.txt
@@ -90,9 +89,6 @@ file -E --brief --mime-type file.txt
 
 ### Protocols
 
-Use this object to configure the command used when a URL is detected.
-
-Example:
 ```json
 "protocols": {
   "http://": "chromium $arg",
@@ -101,6 +97,8 @@ Example:
   "file://": "thunar $arg"
 }
 ```
+
+Use this object to configure the command used when a URL is detected.
 
 ## Logging
 
