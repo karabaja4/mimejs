@@ -22,6 +22,33 @@ Configuration is done via JSON configuration file. It comes with the example def
 ```bash
 $HOME/.config/mime.json
 ```
+
+### Example
+
+```json
+{
+  "extensions": {
+    "txt,c,cpp": "leafpad $arg",
+    "avi,mkv,mp4": "vlc $arg",
+    "torrent": "qbittorrent $arg",
+    "pdf": "mupdf -r 96 $arg"
+  },
+  "mimetypes": {
+    "text/*": "leafpad $arg",
+    "video/*": "vlc $arg",
+    "media/video": "vlc $arg",
+    "document/pdf": "mupdf -r 96 $arg",
+    "inode/directory": "thunar $arg"
+  },
+  "protocols": {
+    "http://": "chromium $arg",
+    "https://": "chromium $arg",
+    "slack://": "slack $arg",
+    "file://": "thunar $arg"
+  }
+}
+```
+
 ### Variables
 
 Use `$arg` to pass the xdg-open parameter.\
