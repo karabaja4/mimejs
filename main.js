@@ -26,11 +26,9 @@ const main = async () => {
   };
   
   const arg = esc(args._[0]);
-  const cwd = esc(process.cwd());
   
   const vars = {
-    '$arg': `'${arg}'`,
-    '$pwd': `'${cwd}'`
+    '$arg': `'${arg}'`
   };
   
   const sub = (cmd) => {

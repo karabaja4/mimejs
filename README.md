@@ -51,8 +51,7 @@ $HOME/.config/mime.json
 
 ### Variables
 
-Use `$arg` to pass the xdg-open parameter.\
-Use `$pwd` to pass the current directory path (useful for file managers).
+Use `$arg` to pass the xdg-open parameter.
 
 ### Extensions
 
