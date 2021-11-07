@@ -82,7 +82,7 @@ Use this object to configure the command used when a specific extension is detec
 }
 ```
 
-Use this object to configure the command used when a specific MIME type is detected. You can use a wildcard `*` to match multiple MIME types or subtypes for every command, e.g. use `video/*` to match all video mime types, such as `video/mp4` or `video/x-matroska`.
+Use this object to configure the command used when a specific MIME type is detected. You can use a wildcard `*` to match multiple MIME types or subtypes for every command, e.g. use `video/*` to match all video MIME types, such as `video/mp4` or `video/x-matroska`.
 
 Use a `file` command to identify the MIME type of your file:
 ```bash
