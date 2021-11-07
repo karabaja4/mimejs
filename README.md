@@ -10,7 +10,7 @@ It focuses on adding the support for:
 
 ## Configuration
 
-Configuration is done via JSON configuration file. It comes with the example defaults in the system configuration file, please edit to your liking.
+Configuration is done via a single JSON configuration file. The application includes the global system configuration file with some example defaults, please edit to your liking and/or copy the configuration to your user profile, as specified on the paths below.
 
 ### System wide
 
@@ -49,9 +49,11 @@ $HOME/.config/mime.json
 }
 ```
 
+Let's analyze the sections of this configuration file.
+
 ### Variables
 
-Use `$arg` to pass the xdg-open parameter.
+Use `$arg` to represent the parameter passed to the xdg-open command.
 
 ### Extensions
 
@@ -78,8 +80,7 @@ Use this object to configure the command used when a specific extension is detec
 }
 ```
 
-Use this object to configure the command used when a specific MIME type is detected.\
-You can use a wildcard `*` to match multiple MIME types or subtypes for every command.
+Use this object to configure the command used when a specific MIME type is detected. You can use a wildcard `*` to match multiple MIME types or subtypes for every command, e.g. use `video/*` to match all video mime types, such as `video/mp4` or `video/x-matroska`.
 
 Use a `file` command to identify the MIME type of your file:
 ```bash
@@ -97,7 +98,7 @@ file -E --brief --mime-type file.txt
 }
 ```
 
-Use this object to configure the command used when a URL is detected.
+Use this object to configure the command used when a URL parameter is detected.
 
 ## Logging
 
