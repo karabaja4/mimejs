@@ -10,20 +10,22 @@ It focuses on adding the support for:
 
 ## Configuration
 
-Configuration is done via a single JSON configuration file. The application includes the global system configuration file with some example defaults, please edit to your liking and/or copy the configuration to your user profile, as specified on the paths below.
+Configuration is done via a `mime.json` configuration file.
 
-### System wide
+A global system configuration file with some example defaults is included, which you can edit to your liking and/or copy to your user configuration folder, as specified on the paths below.
+
+### System wide configuration path
 
 ```bash
 /etc/mime.json
 ```
 
-### Per user
+### Per user configuration path
 ```bash
 $HOME/.config/mime.json
 ```
 
-### Example
+### Example configuration
 
 ```json
 {
