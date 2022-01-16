@@ -8,8 +8,8 @@ const exec = util.promisify(require('child_process').exec);
 const log = require('./lib/log');
 const cfg = require('./lib/config');
 
-if (args.help || args._.length !== 1) {
-  console.log('mimejs 0.1\n\nusage: xdg-open { file | URL }');
+if (args.help || args._.length !== 1 || !args._[0]) {
+  console.log('mimejs\n\nusage: xdg-open { file | URL }');
   process.exit(1);
 }
 
