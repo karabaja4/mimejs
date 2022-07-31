@@ -1,8 +1,8 @@
 # mimejs
 
-mimejs is a small Node.js application designed to replace xdg-open on a Linux system. It discards any use of *.desktop files and instead focuses on running commands to open files.
+mimejs is a small Node.js application designed to replace [xdg-open](https://wiki.archlinux.org/title/Xdg-utils#xdg-open) on a Linux system. It discards any use of *.desktop files and instead lets the user write custom commands to open files.
 
-It focuses on adding the support for:
+It supports file type detection based on:
 
 * Extensions
 * MIME Types
@@ -51,7 +51,7 @@ $HOME/.config/mime.json
 }
 ```
 
-Let's analyze the sections of this configuration file.
+Below we will analyze the individual sections of this configuration file.
 
 ### Variables
 
