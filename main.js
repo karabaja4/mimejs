@@ -72,7 +72,7 @@ const main = async () => {
     for (const key in extensions) {
       const splits = key.split(',');
       for (let i = 0; i < splits.length; i++) {
-        if (match(ext, splits[i].trim())) {
+        if (ext === splits[i].trim()) {
           return await execute(extensions[key]);
         }
       }
