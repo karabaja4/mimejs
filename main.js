@@ -43,10 +43,6 @@ const main = async () => {
     await log.write('exec', command);
     return await exec(`( ${command} & ) > /dev/null 2>&1`);
   };
-  
-  const match = (value, glob) => {
-    return nanomatch.isMatch(value, glob.replace(/\*+/gi, '**'), { nonegate: true, nocase: true });
-  };
 
   const config = await cfg.read();
   if (!config) {
@@ -78,6 +74,10 @@ const main = async () => {
       }
     }
   }
+
+  const match = (value, glob) => {
+    return nanomatch.isMatch(value, glob.replace(/\*+/gi, '**'), { nonegate: true, nocase: true });
+  };
 
   // mimetypes
   try {
