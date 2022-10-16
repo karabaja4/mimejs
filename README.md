@@ -102,14 +102,27 @@ file -E --brief --mime-type file.txt
 
 Use this object to configure the command used when a URL parameter is detected.
 
-You can also append a domain to the protocol, enabling you to define different commands to open different websites. For example:
+**Extending Protocols with specific URLs**
+
+You can also extend the protocol key with a more specific URL, enabling you to define different commands to open different websites. For example:
 ```json
 "protocols": {
-  "https://archlinux.org/": "chromium $arg",
+  "https://avacyn.aerium.hr/stuff/lg3.jpg": "chromium $arg",
   "https://aws.amazon.com/": "firefox $arg"
 }
 ```
-The domain suffix **must** end with a slash (`/`).
+This will have an effect of all URLs starting with the specified URL to open with the specified command.
+
+This means that in the above example, these links:
+```
+https://aws.amazon.com/
+https://aws.amazon.com/ec2/
+https://aws.amazon.com/rds/
+https://aws.amazon.com/rds/features/security/
+```
+will all match `https://aws.amazon.com/` and open in Firefox.
+
+Please be aware that the priority goes to the protocol which is defined first. This means that you should define all your specific URLs before the generic protocol entries such as `https://`.
 
 ## Logging
 
