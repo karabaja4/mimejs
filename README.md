@@ -102,6 +102,15 @@ file -E --brief --mime-type file.txt
 
 Use this object to configure the command used when a URL parameter is detected.
 
+You can also append a domain to the protocol, enabling you to define different commands to open different websites. For example:
+```json
+"protocols": {
+  "https://archlinux.org/": "chromium $arg",
+  "https://aws.amazon.com/": "firefox $arg"
+}
+```
+The domain suffix **must** end with a slash (`/`).
+
 ## Logging
 
 mimejs logs everything it does to:
