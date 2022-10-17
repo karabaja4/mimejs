@@ -3,7 +3,6 @@
 const args = require('minimist')(process.argv.slice(2));
 const path = require('path');
 const util = require('util');
-const nanomatch = require('nanomatch');
 const exec = util.promisify(require('child_process').exec);
 const log = require('./lib/log');
 const cfg = require('./lib/config');
@@ -75,8 +74,9 @@ const main = async () => {
     }
   }
 
-  const match = (value, glob) => {
-    return nanomatch.isMatch(value, glob.replace(/\*+/gi, '**'), { nonegate: true, nocase: true });
+  const match = (value, key) => {
+    const expression = `^${key.replace(/\*+/gi, '.+')}$`;
+    return value.match(new RegExp(expression, 'gi'));
   };
 
   // mimetypes
