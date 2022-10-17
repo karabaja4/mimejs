@@ -1,13 +1,12 @@
 #!/usr/bin/env node
 
-const args = require('minimist')(process.argv.slice(2));
 const path = require('path');
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 const log = require('./lib/log');
 const cfg = require('./lib/config');
 
-if (args.help || args._.length !== 1 || !args._[0]) {
+if (process.argv.length !== 3) {
   console.log('mimejs\n\nusage: xdg-open { file | URL }');
   process.exit(1);
 }
@@ -24,7 +23,7 @@ const main = async () => {
     return value.replace(/'/g, "'\\''");
   };
   
-  const arg = esc(args._[0]);
+  const arg = esc(process.argv[2]);
   
   const vars = {
     '$arg': `'${arg}'`
