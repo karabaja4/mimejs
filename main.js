@@ -38,9 +38,9 @@ const main = async () => {
     return cmd;
   };
   
-  const execute = async (cmd) => {
+  const execute = async (source, cmd) => {
     const command = sub(cmd);
-    await log.write('exec', command);
+    await log.write(source, command);
     return await exec(`( ${command} & ) > /dev/null 2>&1`);
   };
 
@@ -55,7 +55,7 @@ const main = async () => {
     for (const key in protocols) {
       if (key.match(/^[a-z]+:\/l?\/.*$/gi)) {
         if (arg.startsWith(key)) {
-          return await execute(protocols[key]);
+          return await execute(`protocol:${key}`, protocols[key]);
         }
       }
     }
@@ -69,7 +69,7 @@ const main = async () => {
       const splits = key.split(',');
       for (let i = 0; i < splits.length; i++) {
         if (ext === splits[i].trim()) {
-          return await execute(extensions[key]);
+          return await execute(`extension:${ext}`, extensions[key]);
         }
       }
     }
@@ -85,7 +85,7 @@ const main = async () => {
     const { stdout } = await exec(`file -L -E --brief --mime-type '${arg}'`);
     for (const key in mimetypes) {
       if (match(stdout.trim(), key)) {
-        return await execute(mimetypes[key]);
+        return await execute(`mimetype:${key}`, mimetypes[key]);
       }
     }
   } catch (e) {}
