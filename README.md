@@ -139,11 +139,10 @@ It logs every application that it attempted to open, successful or otherwise. Us
 
 Symlink `main.js` as your `xdg-open` binary:
 
-```bash
-npm install
-sudo mv "/usr/bin/xdg-open" "/usr/bin/xdg-open.bak"
-sudo ln -s "${PWD}/main.js" "/usr/bin/xdg-open"
-sudo cp "${PWD}/mime.json" "/etc/mime.json"
+```
+# mv "/usr/bin/xdg-open" "/usr/bin/xdg-open.bak"
+# ln -s "${PWD}/main.js" "/usr/bin/xdg-open"
+# cp "${PWD}/mime.json" "/etc/mime.json"
 ```
 
 If you use Arch Linux, there is an AUR package: https://aur.archlinux.org/packages/mimejs-git
