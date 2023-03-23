@@ -60,7 +60,7 @@ const main = async () => {
   }
 
   // extensions
-  const ext = path.extname(arg).replace('.', '');
+  const ext = path.extname(arg).replace('.', '').toLowerCase();
   if (ext) {
     const extensions = config['extensions'] || {};
     for (const key in extensions) {
