@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
-const path = require('path');
-const util = require('util');
-const exec = util.promisify(require('child_process').exec);
+const path = require('node:path');
+const util = require('node:util');
+const exec = util.promisify(require('node:child_process').exec);
 const log = require('./lib/log');
 const cfg = require('./lib/config');
 
